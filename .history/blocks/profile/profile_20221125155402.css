@@ -1,0 +1,6 @@
+.profile{
+  display: grid;
+  grid-template-columns: minmax(auto, px) minmax(auto, 150px)
+  /* grid-template-columns: minmax(auto, 120px) minmax(auto, 336px) minmax(auto, 150px); */
+  /* align-items: center; */
+}

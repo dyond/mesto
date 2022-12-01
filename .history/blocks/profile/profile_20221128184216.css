@@ -1,0 +1,13 @@
+.profile{
+  font-size: 0px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 880px){
+  .profile{
+    d
+  }
+}

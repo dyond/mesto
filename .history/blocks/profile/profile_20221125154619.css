@@ -1,0 +1,4 @@
+.profile{
+  display: grid;
+  grid-template-columns: minmax(auto, 120px) minmax(auto, 336pxpx);
+}

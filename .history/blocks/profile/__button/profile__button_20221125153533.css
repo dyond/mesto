@@ -1,0 +1,11 @@
+.profile__button{
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: 1px solid #FFFFFF;
+}
+
+.profile__button img{
+  width: 10px;
+  height: 10px;
+}

@@ -1,0 +1,9 @@
+.profile__info{
+  color: #fff;
+}
+
+.profile__info-test{
+  display: flex;
+  align-items: center;
+  
+}

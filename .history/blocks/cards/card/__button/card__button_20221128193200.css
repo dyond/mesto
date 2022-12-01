@@ -1,0 +1,8 @@
+.card__button{
+  background: #000;
+}
+
+.card__button:hover{
+  cursor: pointer;  
+  opacity: 0.6;
+}

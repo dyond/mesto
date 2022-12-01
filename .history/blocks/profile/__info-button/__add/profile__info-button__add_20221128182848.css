@@ -1,0 +1,9 @@
+.profile__info-button__add{
+  padding: 0;
+  font-size: 0;
+  padding: 14px 64px;
+  padding-left: 286;
+  background: transparent;
+  border: 1px solid #fff;
+  /* max-height: 50px; */
+}

@@ -1,0 +1,23 @@
+.popup__form-button{
+  width: 238px;
+  margin-top: 15px;
+  margin-left: 22px;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 14px 82px;
+
+}
+
+.popup__form-button:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 880px) {
+  .popup__form-button {
+    width: 358px;
+    margin-left: 36px;
+  }
+}

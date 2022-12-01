@@ -1,0 +1,5 @@
+.profile{
+  display: grid;
+  grid-template-columns: repeat(auto-fil);
+  /* grid-template-columns: minmax(auto, 120px) minmax(auto, 336pxpx) minmax(auto, 150px); */
+}

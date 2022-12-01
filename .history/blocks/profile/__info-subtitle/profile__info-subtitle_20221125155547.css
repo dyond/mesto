@@ -1,0 +1,18 @@
+.profile__info-subtitle {
+  margin: 0;
+  Width 336px Height 18px Top 236px Left 350px Исследователь океана Font Inter Weight 400 Size 18px Line height 21.78px #FFFFFF
+    /* Исследователь океана */
+  
+  
+    position: absolute;
+    width: 336px;
+    height: 18px;
+    left: 350px;
+    top: 236px;
+  
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}

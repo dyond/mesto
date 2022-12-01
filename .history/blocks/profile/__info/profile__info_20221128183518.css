@@ -1,0 +1,10 @@
+.profile__info{
+  color: #fff;
+  padding-left: 30px;
+  height: 336px;
+}
+
+.profile__info-test{
+  display: flex;
+  align-items: center;
+}

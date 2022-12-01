@@ -1,0 +1,9 @@
+.header__logo{
+  margin-bottom: 41px;
+}
+
+@media screen and (min-width: 880px) {
+  .profile__info-button__add {
+    margin-left: 244px;
+  }
+}
