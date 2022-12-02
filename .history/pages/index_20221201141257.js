@@ -1,1 +1,0 @@
-let popup = document.querySelector('.pop')
