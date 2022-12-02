@@ -1,6 +1,0 @@
-.profile{
-  display: grid;
-  grid-template-columns: minmax(auto, 486px) minmax(auto, 150px);
-  justify-content: space-between;
-  align-items: center;
-}
