@@ -8,6 +8,6 @@
 
 
 .card__button:hover{
-  cursor: pointer;
+  cursor: pointer; 
   opacity: 0.6;
 }
