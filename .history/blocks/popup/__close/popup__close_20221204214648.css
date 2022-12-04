@@ -1,0 +1,26 @@
+.popup__close{
+  position: relative;
+  left: 260px;
+  background: transparent;
+  font-size: 0;
+  padding: 0;
+  border: none;
+  margin-left: auto;
+  
+}
+
+.popup__close:hover{
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 880px) {
+  .popup__close {
+    h32
+    left: 408px;
+  }
+  .popup__close img{
+    /* width: 32px; */
+    /* object-fit: contain; */
+  }
+}
