@@ -1,0 +1,9 @@
+.profile__info-image img{
+  width: 7.5px;
+}
+
+@media screen and (min-width: 880px) {
+  .profile__info-image img{
+    width: 10px;
+  }
+}

@@ -26,7 +26,7 @@
 @import url(../blocks/profile/__info-subtitle/profile__info-subtitle.css  );
 @import url(../blocks/profile/__info-edit/profile__info-edit.css);
 @import url(../blocks/profile/__info-add/profile__info-add.css);
-@import url(../blocks/profile/__info-image/profile__info-image.css);
+@import url(../blocks/profile/__info-image/);
 
 /* CARDS */
 @import url(../blocks/cards/cards.css);
