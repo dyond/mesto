@@ -1,0 +1,6 @@
+.popup__image-block{
+  /* display: block; */
+  /* margin: 0; */
+  position: relative;
+  outline: 1px solid white;
+}

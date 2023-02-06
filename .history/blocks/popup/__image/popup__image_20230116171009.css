@@ -1,0 +1,27 @@
+.popup__image{
+  /* display: block; */
+  /* margin: 0 auto; */
+  /* margin-left: 150px; */
+  outline: 1px solid white;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+.popup__imagee{
+  max-width: 75vw;
+  max-height: 75vh;
+  outline: 1px solid white;
+  
+}
+
+/* .popup__image{
+  max-width: 75vw;
+  max-height: 75vh;
+  outline: 1px solid white;
+  display: block;
+  margin: 0 auto;
+} */

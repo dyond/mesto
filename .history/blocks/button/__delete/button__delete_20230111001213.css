@@ -1,0 +1,12 @@
+.button__delete{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: none;
+  border: none;
+}
+
+.button__delete:hover{
+  cursor: pointer;
+  opacity: 0.6;
+}

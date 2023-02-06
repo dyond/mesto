@@ -1,0 +1,20 @@
+.popup__image{
+  display: inline-block;
+  margin-left: 150px;
+  outline: 1px solid white;
+}
+
+.popup__imagee{
+  max-width: 75vw;
+  max-height: 75vh;
+  outline: 1px solid white;
+  
+}
+
+/* .popup__image{
+  max-width: 75vw;
+  max-height: 75vh;
+  outline: 1px solid white;
+  display: block;
+  margin: 0 auto;
+} */

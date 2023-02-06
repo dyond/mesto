@@ -1,0 +1,23 @@
+.popup__image{
+  display: inline-block;
+}
+
+.popup__imagee{
+  max-width: 75vw;
+  max-height: 75vh;
+}
+
+.popup__image_close{
+  background: none;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  border: none;
+  top: -22px;
+  rr
+}
+
+.popup__image_close:hover{
+  cursor: pointer;
+  
+}

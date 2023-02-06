@@ -1,0 +1,9 @@
+.popup_opened{
+  display: none;
+
+}
+
+.visuallyhidden {
+  opacity: 0;
+
+}

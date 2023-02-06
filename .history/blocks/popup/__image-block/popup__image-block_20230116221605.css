@@ -1,0 +1,19 @@
+.popup__image-block{
+  display: none;
+  position: fixed;
+  text-align: center;
+
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1;
+}
+
+@media screen and (min-width: 880px)  {
+  .popup__image-block{
+    padding-top: 90px;
+  }
+}

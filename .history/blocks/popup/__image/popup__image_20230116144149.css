@@ -1,0 +1,13 @@
+.popup__image{
+  display: inline-block;
+  /* margin: 0 auto; */
+  text-align: center;
+  align-items: center;
+  
+}
+
+.popup__imagee{
+max-width: 75vw;
+  max-height: 75vh;
+  
+}
