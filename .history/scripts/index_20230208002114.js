@@ -117,7 +117,7 @@ function displayCard({ name, link }){
   // Открытие изображения 
 
   let imageClose = document.querySelector('.popup__image-close')
-  let imageBlock = document.querySelector('.popup-block')
+  let imageBlock = document.querySelector('.popup_-block')
 
   let popupImage = document.querySelector('.popup__image')
   let popupCaption = document.querySelector('.popup__caption')
@@ -139,6 +139,7 @@ function displayCard({ name, link }){
   let cardTitle = placeElement.querySelector(".card__title")
 
   cardImage.addEventListener('click', function(){
+    console.log(imageBlock)
     imageBlock.classList.remove('hidden');
     setTimeout(function () {
       imageBlock.classList.remove('visuallyhidden');

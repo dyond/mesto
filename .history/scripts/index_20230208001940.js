@@ -139,6 +139,7 @@ function displayCard({ name, link }){
   let cardTitle = placeElement.querySelector(".card__title")
 
   cardImage.addEventListener('click', function(){
+    console.log(imageBlock)
     imageBlock.classList.remove('hidden');
     setTimeout(function () {
       imageBlock.classList.remove('visuallyhidden');
