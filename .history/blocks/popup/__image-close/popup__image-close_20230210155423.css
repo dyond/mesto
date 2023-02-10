@@ -1,0 +1,18 @@
+.popup__image-close{
+  l
+  position: absolute;
+  top: -36px;
+
+}
+
+.popup__image-close:hover{
+  cursor: pointer;
+}
+
+
+@media screen and (min-width: 880px) {
+  .popup__image-close {
+    left: calc(100% + 8px);
+    top: -40px;
+  }
+}

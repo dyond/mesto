@@ -1,0 +1,7 @@
+.popup__image-wrapper{
+  position: relative;
+  display: inline-block;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* justify-content: space-between; */
+}

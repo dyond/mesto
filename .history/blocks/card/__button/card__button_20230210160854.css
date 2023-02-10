@@ -1,0 +1,17 @@
+.card__button{
+  /* display: block; */
+  /* width: 22px; */
+  /* background: transparent; */
+  background-image: url(../../../images/vector_3.svg);
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
+  /* padding: 0; */
+  /* font-size: 0; */
+  /* border: none; */
+}
+
+
+.card__button:hover{
+  cursor: pointer;
+  opacity: 0.6;
+}

@@ -1,0 +1,14 @@
+.popup__image-close{
+  /* background: none; */
+  /* position: absolute; */
+  /* right: -28px;
+  top: -28px;
+  padding: 0;
+  margin: 0;
+  border: none; */
+
+}
+
+.popup__image-close:hover{
+  cursor: pointer;
+}

@@ -1,0 +1,16 @@
+.popup__image-close{
+  left: 1;
+  position: absolute;
+  top: -40px;
+  /* right: -40x; */
+  /* top: -28px; */
+  /* padding: 0; */
+  /* margin: 0; */
+  /* border: none; */
+  /* top: 0; */
+
+}
+
+.popup__image-close:hover{
+  cursor: pointer;
+}
