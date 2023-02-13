@@ -19,8 +19,8 @@
         </button>
         <form name="profile__form" method="post" class="popup__form-container popup__form-profile">
           <h2 class="popup__form-title">Редактировать профиль</h2>
-          <input class="popup__form-input popup__form-input_type_name" value="Жак-Ив Кусто" type="text" placeholder="Жак-Ив Кусто">
-          <input class="popup__form-input popup__form-input_type_job"  value="Исследователь океана" type="text" placeholder="Исследователь океана">
+          <input required class="popup__form-input popup__form-input_type_name" value="Жак-Ив Кусто" type="text" placeholder="Жак-Ив Кусто">
+          <input required class="popup__form-input popup__form-input_type_job"  value="Исследователь океана" type="text" placeholder="Исследователь океана">
           <button type="submit" class="popup__form-button">Сохранить</button>
         </form>
       </div>
@@ -33,8 +33,8 @@
         </button>
         <form name="profile__form" method="post" class="popup__form-container popup__form-place">
           <h2 class="popup__form-title">Новое место</h2>
-          <input class="popup__form-input popup__form-input_type_place" value="" placeholder="Название" type="text">
-          <input class="popup__form-input popup__form-input_type_link"  value="" placeholder="Ссылка на картинку" type="text">
+          <input required class="popup__form-input popup__form-input_type_place" value="" placeholder="Название" type="text">
+          <input required class="popup__form-input popup__form-input_type_link"  value="" placeholder="Ссылка на картинку" type="text">
           <button type="submit" class="popup__form-button">Сохранить</button>
         </form>
       </div>
@@ -42,11 +42,8 @@
 
     <figure class="popup popup-block">
       <div class="popup__image-wrapper">
-        
-        <!-- <div class=""> -->
-        <img src="https://example.jpg" alt="" class="popup__image">
+        <img src="" alt="" class="popup__image">
           <figcaption class="popup__caption"></figcaption>
-        <!-- </div> -->
         <button type="button" class="popup__close popup__image-close">
           <img class="popup__close-image" src="images/close_icon.png" alt="Крестик закрытия">
         </button>
@@ -89,7 +86,7 @@
           <img src="https://example.jpg" alt="" class="card__image">
           <div class="card__group">
             <h2 class="card__title"></h2>
-            <button type="button" class="card__button ">
+            <button type="button" class="card__button">
             </button>
           </div>
         </div>

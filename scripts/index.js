@@ -52,12 +52,12 @@ const initialCards = [
   }
 ];
 
-// Открытие и закрытие popup
-
+// Функция открытия popup окон
 function openPopup(popup){
   popup.classList.add('popup_opened')
 }
 
+// Окрытие редактирования профиля
 buttonEdit.addEventListener('click', function(){
   nameInput.value = title.textContent
   nameInput.placeholder = title.textContent
@@ -68,13 +68,18 @@ buttonEdit.addEventListener('click', function(){
   openPopup(popupEdit)
 })
 
-
-// imageBlock.addEventListener('click', () => openPopup(popupAdd))
-
+// Открытие доавления поста
 buttonAdd.addEventListener('click', () => openPopup(popupAdd))
 
+// Функция закрытия popup окон
 function closePopup(popup) {
-  popup.classList.remove('popup_opened')
+  popup.classList.add('popup_fade')
+
+  setTimeout(function(){
+    popup.classList.remove('popup_opened')
+    popup.classList.remove('popup_fade')
+  }, 500)
+  
 }
 
 closeBtns.forEach((button) => {
@@ -82,43 +87,7 @@ closeBtns.forEach((button) => {
   button.addEventListener('click', () => closePopup(popup))
 });
 
-
-// const openBtns = document.querySelectorAll('.button')
-// console.log(openBtns)
-
-
-// openBtns.forEach((button)=>{
-//   // const popup = button.closest('.popup')
-//   button.addEventListener('click', () => console.log(button))
-// })
-
-// function togglePopup(index){
-  
-//   popups[index].classList.remove('hidden');
-//   setTimeout(function () {
-//     popups[index].classList.remove('visuallyhidden');
-//   }, 20);
-
-//   closeBtns[index].addEventListener( 'click', ()=> closePopup(index) );
-// }
-
-// buttonEdit.addEventListener( 'click', ()=> togglePopup(0) );
-// buttonAdd.addEventListener( 'click', ()=> togglePopup(1) );
-
-// function closePopup(index){
-
-//   popups[index].classList.add('visuallyhidden');    
-//   popups[index].addEventListener('transitionend', function(e) {
-//     popups[index].classList.add('hidden');
-//     }, {
-//     capture: false,
-//     once: true,
-//     passive: false
-//   });
-// }
-
 // Обработка обновления профиля и добавления карточек
-
 formElementProfile.addEventListener('submit', function (evt) {
   evt.preventDefault()
   title.textContent = nameInput.value
@@ -142,7 +111,7 @@ const cardContainer = document.querySelector(".cards");
 const cardTemplate = document.querySelector("#card-template").content;
 
 
-const createCard = initialCards.map(function (item) {
+const displayCards = initialCards.map(function (item) {
   return {
     name: item.name,
     link: item.link
@@ -150,31 +119,32 @@ const createCard = initialCards.map(function (item) {
 });
 
 function display() {
-  createCard.forEach(displayCard);
+  displayCards.forEach(displayCard);
 }
 
+function createCard (itemCard){
+  cardContainer.prepend(itemCard);
+  return itemCard
+}
+
+
 function displayCard({ name, link }){
+
   const placeElement = cardTemplate.querySelector(".card").cloneNode(true);
   placeElement.querySelector(".card__title").textContent = name;
   placeElement.querySelector(".card__image").src = link;
   placeElement.querySelector(".card__image").alt = name;
 
   // Открытие изображения 
-
   const cardImage = placeElement.querySelector(".card__image")
   const cardTitle = placeElement.querySelector(".card__title")
 
   cardImage.addEventListener('click', function(){
-
     openPopup(imageBlock)
     
-    // Получаем значание картинки и названия места
-    const cardImageSrc = cardImage.src
-    const cardTitleSrc = cardTitle.textContent
-    
-    popupImage.src = cardImageSrc
-    popupImage.alt = cardTitleSrc
-    popupCaption.textContent = cardTitleSrc
+    popupImage.src = cardImage.src
+    popupImage.alt = cardTitle.textContent
+    popupCaption.textContent = cardTitle.textContent
   })
 
   // Кнопка лайка
@@ -194,8 +164,9 @@ function displayCard({ name, link }){
   deleteButton.addEventListener('click', function(){
     placeElement.remove()
   })
+  
 
-  cardContainer.prepend(placeElement);
+  createCard(placeElement)
 }
 
 display();

@@ -8,11 +8,19 @@
   background: rgba(0, 0, 0, .5);
   z-index: 1;
 
-  transition: all .3s ease-out;
+  animation-duration: 0.5s;
+  animation-name: easeout;
 }
 
-.popup_opened{
-  display: block;
+@keyframes easeout {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
 }
 
 
