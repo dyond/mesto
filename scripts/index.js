@@ -73,12 +73,13 @@ buttonAdd.addEventListener('click', () => openPopup(popupAdd))
 
 // Функция закрытия popup окон
 function closePopup(popup) {
-  popup.classList.add('popup_fade')
+  // popup.classList.add('popup_fade')
 
-  setTimeout(function(){
-    popup.classList.remove('popup_opened')
-    popup.classList.remove('popup_fade')
-  }, 500)
+  popup.classList.remove('popup_opened')
+  // setTimeout(function(){
+  //   popup.classList.remove('popup_opened')
+  //   popup.classList.remove('popup_fade')
+  // }, 500)
   
 }
 
@@ -98,7 +99,7 @@ formElementProfile.addEventListener('submit', function (evt) {
 
 formElementPlace.addEventListener('submit', function (evt) {
   evt.preventDefault()
-  displayCard({name : placeInput.value, link: linkInput.value}) 
+  displayCard(createCard({name : placeInput.value, link: linkInput.value}))
   const popup = formElementPlace.closest('.popup')
   closePopup(popup)
   evt.target.reset()
@@ -109,28 +110,29 @@ formElementPlace.addEventListener('submit', function (evt) {
 
 const cardContainer = document.querySelector(".cards");
 const cardTemplate = document.querySelector("#card-template").content;
-
-
-const displayCards = initialCards.map(function (item) {
-  return {
-    name: item.name,
-    link: item.link
-  };
-});
-
+// НА КАЖДЫЙ ВОЗВРАТ ВЫЗЫВАЕТ ФУНКЦИЮ createCard
 function display() {
-  displayCards.forEach(displayCard);
+  // displayCards.forEach(createCard);
+  initialCards.forEach(function (el) {
+    displayCard(createCard(
+      {
+       name: el.name,
+      link: el.link 
+      }
+
+    ))
+  })
 }
 
-function createCard (itemCard){
-  cardContainer.prepend(itemCard);
-  return itemCard
+// ДОБАВЛЯЕТ ЭЛЕМЕНТ В НАЧАЛО КОНТЕЙНЕРА
+function displayCard (el){
+  cardContainer.prepend(el);
 }
 
-
-function displayCard({ name, link }){
-
+// сОЗДАЕТ И ВОЗВРАЩАЕТ КАРТОЧК
+function createCard({ name, link }){
   const placeElement = cardTemplate.querySelector(".card").cloneNode(true);
+
   placeElement.querySelector(".card__title").textContent = name;
   placeElement.querySelector(".card__image").src = link;
   placeElement.querySelector(".card__image").alt = name;
@@ -164,9 +166,9 @@ function displayCard({ name, link }){
   deleteButton.addEventListener('click', function(){
     placeElement.remove()
   })
-  
+  // displayCard(placeElement)
 
-  createCard(placeElement)
+  return placeElement
 }
 
 display();
