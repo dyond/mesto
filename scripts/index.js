@@ -9,6 +9,8 @@ const formElementPlace = document.querySelector('.popup__form-place')
 
 const closeBtns = document.querySelectorAll('.popup__close')
 
+const popups = document.querySelectorAll('.popup')
+
 const nameInput = document.querySelector('.popup__form-input_type_name')
 const jobInput = document.querySelector('.popup__form-input_type_job')
 
@@ -55,6 +57,22 @@ const initialCards = [
 // Функция открытия popup окон
 function openPopup(popup){
   popup.classList.add('popup_opened')
+  document.addEventListener('keydown', closePopupEsc)
+  popup.addEventListener('mousedown', closePopupOverlay)
+}
+
+function closePopupEsc(evt){
+  if(evt.key === 'Escape'){
+    popups.forEach((el) => el.classList.remove('popup_opened'))
+    document.removeEventListener('keydown', closePopupEsc);
+  }
+}
+
+function closePopupOverlay(evt){
+  if(evt.target == evt.currentTarget){
+    popups.forEach((el) => el.classList.remove('popup_opened'))
+    document.removeEventListener('mousedown', closePopupOverlay);
+  }
 }
 
 // Окрытие редактирования профиля
@@ -73,14 +91,7 @@ buttonAdd.addEventListener('click', () => openPopup(popupAdd))
 
 // Функция закрытия popup окон
 function closePopup(popup) {
-  // popup.classList.add('popup_fade')
-
   popup.classList.remove('popup_opened')
-  // setTimeout(function(){
-  //   popup.classList.remove('popup_opened')
-  //   popup.classList.remove('popup_fade')
-  // }, 500)
-  
 }
 
 closeBtns.forEach((button) => {
@@ -166,9 +177,22 @@ function createCard({ name, link }){
   deleteButton.addEventListener('click', function(){
     placeElement.remove()
   })
-  // displayCard(placeElement)
 
   return placeElement
 }
 
 display();
+
+// ----------------------------------------
+
+const options = {
+  formSelector: '.form',
+  submitSelector: '.popup__form-button',
+  inputSelector: '.popup__form-input',
+  inputSectionSelector: '.form__section',
+  inputErrorSelector: '.popup__input-error',
+  inputErrorClass: 'popup__input-error_active',
+  disabledButtonClass: 'popup__submit_disabled',
+}
+
+enableValidation(options)

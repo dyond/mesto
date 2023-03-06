@@ -60,3 +60,9 @@
 @import url(../blocks/popup/__image-close/popup__image-close.css);
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__caption/popup__caption.css);
+
+@import url(../blocks/popup/__form-input/_invalid/popup__form-input_invalid.css);
+@import url(../blocks/popup/__input-error/popup__input-error.css);
+@import url(../blocks/popup/__input-error/_active/popup__input-error_active.css);
+@import url(../blocks/popup/__submit_disabled/popup__submit_disabled.css);
+
