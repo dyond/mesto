@@ -19,13 +19,21 @@ const toggleInputState = (inputElement, options) => {
   }
 }
 
+const hiddenErrorForInput = (inputElement, options) => {
+  const sectionElement = inputElement.closest(options.inputSectionSelector);
+  const errorElement = sectionElement.querySelector(options.inputErrorSelector)
+
+  hiddenError(errorElement, options.inputErrorClass)
+
+}
+
 const enableButton = (buttonElement, disabledButtonClass) => {
-  buttonElement.removeAttribute('disable')
+  buttonElement.removeAttribute('disabled')
   buttonElement.classList.remove(disabledButtonClass)
 }
 
 const disableButton = (buttonElement, disabledButtonClass) => {
-  buttonElement.setAttribute('disable', 'true')
+  buttonElement.setAttribute('disabled', 'true')
   buttonElement.classList.add(disabledButtonClass)
 }
 
@@ -43,7 +51,9 @@ const toggleButtonState = (inputs, submitElement, disabledButtonClass) => {
 const setEventListeners = (form, options) => {
   const submitElement = form.querySelector(options.submitSelector)
   const inputs = Array.from(form.querySelectorAll(options.inputSelector))
-
+  
+  toggleButtonState(inputs, submitElement, options.disabledButtonClass)
+  
   inputs.forEach( inputElement => {
     inputElement.addEventListener('input', () => {
       toggleInputState(inputElement, options)
@@ -51,7 +61,7 @@ const setEventListeners = (form, options) => {
     })
   })
 
-  toggleButtonState(inputs, submitElement, options.disabledButtonClass)
+  
 }
 
 const enableValidation = (options) => {
