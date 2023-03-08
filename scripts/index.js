@@ -45,14 +45,15 @@ function openPopup(popup){
 
 function closePopupEsc(evt){
   if(evt.key === 'Escape'){
-    popupList.forEach((el) => closePopup(el))
+    const popup = document.querySelector('.popup_opened');
+    closePopup(popup);
   }
 }
 
 popupList.forEach((popup) => { 
   popup.addEventListener('mousedown', (event) => { 
     const targetClassList = event.target.classList; 
-    if (targetClassList.contains('popup') || targetClassList.contains('popup__close')) {
+    if (targetClassList.contains('popup') || targetClassList.contains('popup__close-image')) {
       closePopup(popup);
     }
   })
@@ -77,11 +78,6 @@ function closePopup(popup) {
   popup.classList.remove('popup_opened')
   document.removeEventListener('keydown', closePopupEsc);
 }
-
-closeBtns.forEach((button) => {
-  const popup = button.closest('.popup')
-  button.addEventListener('click', () => closePopup(popup))
-});
 
 // Обработка обновления профиля и добавления карточек
 formElementProfile.addEventListener('submit', function (evt) {
@@ -110,18 +106,10 @@ const cardContainer = document.querySelector(".cards");
 const cardTemplate = document.querySelector("#card-template").content;
 
 function display() {
-  // displayCards.forEach(createCard);
   initialCards.forEach(function (el) {
-    displayCard(createCard(
-      {
-       name: el.name,
-      link: el.link 
-      }
-
-    ))
+    displayCard(createCard(el))
   })
-}
-
+} 
 
 function displayCard (el){
   cardContainer.prepend(el);
