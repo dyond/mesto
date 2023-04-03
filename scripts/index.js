@@ -1,4 +1,4 @@
-import { FormValidator, disableButton } from './validate.js';
+import { FormValidator } from './FormValidator.js';
 import Card from './Card.js';
 import {initialCards} from './cards.js'
 
@@ -69,17 +69,12 @@ popupList.forEach((popup) => {
 // Open profile popup
 buttonEdit.addEventListener('click', function(){
   nameInput.value = title.textContent
-  nameInput.placeholder = title.textContent
-
   jobInput.value = subtitle.textContent
-  jobInput.placeholder = subtitle.textContent
-
   openPopup(popupEdit)
 })
 
 // Open add card popup
 buttonAdd.addEventListener('click', () => openPopup(popupAdd))
-
 
 const cardContainer = document.querySelector(".cards");
 const cardTemplateSelector = "#card-template";
@@ -97,7 +92,6 @@ function addCard(name, link) {
   cardContainer.prepend(card.createCard());
 }
 
-const submitAddButton = formElementPlace.querySelector(".popup__form-button");
 
 // Changing profile function
 function handleFormSubmitProf(evt){
@@ -109,18 +103,22 @@ function handleFormSubmitProf(evt){
 
 formElementProfile.addEventListener("submit", handleFormSubmitProf)
 
+
+const submitAddButton = document.querySelector('.popup__form-button');
+
 // Add card function
 function handleFormSubmitPlace(evt) {
   evt.preventDefault();
-  const placeInput = document.querySelector('.popup__form-input_type_place')
-  const linkInput = document.querySelector('.popup__form-input_type_link')
+  const placeInput = document.querySelector('.popup__form-input_type_place');
+  const linkInput = document.querySelector('.popup__form-input_type_link');
 
   const name = placeInput.value;
   const link = linkInput.value;
 
   addCard(name, link);
   closePopup(popupAdd);
-  disableButton(submitAddButton, formSettings.disabledButtonClass);
+  const formValidatorPlace = new FormValidator(formSettings, formElementPlace);
+  formValidatorPlace.toggleButtonState(submitAddButton);
   formElementPlace.reset();
 }
 
