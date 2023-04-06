@@ -9,7 +9,6 @@ class FormValidator {
     this._disabledButtonClass = settings.disabledButtonClass;
     this._submitElement = this._form.querySelector(this._submitSelector); 
     this._inputs = Array.from(this._form.querySelectorAll(this._inputSelector));
-    this._setEventListeners();
   } 
 
   _hiddenError(errorElement) { 
@@ -44,7 +43,7 @@ class FormValidator {
     this._submitElement.classList.remove(this._disabledButtonClass); 
   } 
 
-  _disableButton() { 
+  disableButton() { 
     this._submitElement.setAttribute('disabled', 'true'); 
     this._submitElement.classList.add(this._disabledButtonClass); 
   } 
@@ -54,7 +53,7 @@ class FormValidator {
     if (formIsValid) { 
       this._enableButton(); 
     } else { 
-      this._disableButton(); 
+      this.disableButton(); 
     } 
   } 
 
@@ -68,10 +67,7 @@ class FormValidator {
     }); 
   } 
 
-  toggleButtonState(buttonElement) {
-    buttonElement.classList.add(this._disabledButtonClass);
-    buttonElement.disabled = true;
-  }
+
 
   enableValidation() { 
     this._setEventListeners(); 
