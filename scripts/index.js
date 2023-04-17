@@ -81,12 +81,15 @@ buttonAdd.addEventListener('click', () => openPopup(popupAdd));
 const cardContainer = document.querySelector('.cards');
 const cardTemplateSelector = '#card-template';
 
+function createCard(name, link) {
+const card = new Card({ name: name, link: link }, cardTemplateSelector);
+return card.createCard();
+}
+
 // Displaying initial cards
 function display() {
-  initialCards.forEach(function (el) {
-    const card = new Card(el, cardTemplateSelector);
-    cardContainer.prepend(card.createCard());
-  });
+  const cards = initialCards.map(card => createCard(card.name, card.link));
+cardContainer.append(...cards);
 }
 
 // Adding new card
