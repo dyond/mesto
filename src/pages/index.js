@@ -40,7 +40,7 @@ const initialCardsSection = new Section({
   items: initialCards,
   renderer: (cardData) => {
     const cardElement = createCard(cardData.name, cardData.link, () => {
-      const popupWithImage = new PopupWithImage('.popup__image');
+      const popupWithImage = new PopupWithImage('.popup-image');
       popupWithImage.open(cardData.name, cardData.link);
     });
     return cardElement;
@@ -62,7 +62,8 @@ addCardPopupWithForm.setEventListeners();
 
 function addCard(name, link) {
   const card = new Card({ name: name, link: link }, cardTemplateSelector, () => {
-    const popupWithImage = new PopupWithImage('.popup__image');
+    const popupWithImage = new PopupWithImage('.popup-image');
+ 
     popupWithImage.open(name, link);
   });
   cardContainer.prepend(card.createCard());

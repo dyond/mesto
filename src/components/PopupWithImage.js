@@ -4,6 +4,11 @@ export default class PopupWithImage extends Popup {
   constructor(popupSelector) {
     super(popupSelector);
     this._popupImage = this._popupElement.querySelector('.popup__image');
+    if(this._popupElement.querySelector('.popup__image')){
+      console.log(this._popupImage = this._popupElement.querySelector('.popup__image'))
+    }else{
+      console.log('asdasdasd')
+    }
     this._popupCaption = this._popupElement.querySelector('.popup__caption');
   }
 
